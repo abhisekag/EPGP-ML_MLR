@@ -1,46 +1,64 @@
-**BoomBikes Demand Prediction: Multiple Linear Regression**
+# BoomBikes Demand Prediction: Multiple Linear Regression
 
-This project focuses on building a robust Multiple Linear Regression model to identify the key factors driving bike rental demand for the bike-sharing company, BoomBikes, and to accurately predict future rental counts.
+This project aims to build a robust Multiple Linear Regression (MLR) model to identify the key factors driving bike rental demand for the bike-sharing company, BoomBikes. The goal is to accurately predict future demand and provide strategic insights for business planning.
 
-**Table of Contents**
+---
 
-**General Info
+## Table of Contents
 
-Technologies Used
+1. [General Information](#general-information)
+2. [Conclusions](#conclusions)
+3. [Technologies Used](#technologies-used)
+4. [Contact](#contact)
 
-Conclusions
+---
 
-Contact**
+## General Information
 
+**Project Background:**  
+BoomBikes, a US-based bike-sharing company, seeks a clear understanding of market dynamics to plan business operations, manage inventory, and develop effective marketing strategies.
 
-**General Information**
+**Business Problem:**  
+Model the relationship between bike demand (total rental count: `cnt`) and various independent variables such as weather, season, and holidays. This will help management predict demand and identify actionable factors for growth.
 
-Project Background: BoomBikes, a US-based bike-sharing company, needs a clear understanding of the market dynamics to plan their business operations, inventory, and marketing strategies effectively.
+**Dataset Used:**  
+- **File:** `day.csv`
+- **Contains:** Daily bike rental counts along with environmental and calendar variables.
+- **Time Period:** Two years (2018-2019)
 
-Business Problem: To model the relationship between bike demand (total rental count, cnt) and various independent variables (weather, season, holidays, etc.) to help management predict demand and identify key controllable factors.
+---
 
-Dataset Used: The day.csv file, which contains daily bike rental data, along with environmental and calendar variables, collected over a two-year period (2018-2019).
+## Conclusions
 
-**Conclusions**
+The final MLR model was developed using an iterative feature selection process based on p-values and Variance Inflation Factor (VIF) analysis, resulting in a strong and interpretable model:
 
-The final model was built using an iterative process of feature selection based on P-values and Variance Inflation Factor (VIF) checks, resulting in a strong and interpretable model:
+- **High Predictive Power:**  
+  The final model achieved an **R² score of approximately 0.82** on the test data, meaning the selected features explain about 82% of the variance in bike rental demand.
 
-High Predictive Power: The final model achieved an R^2 score of approximately 0.82 on the test data, indicating that the selected features explain about 82% of the variance in the bike rental demand.
+- **Top Positive Predictors:**  
+  - **Year (`yr`):** The `yr=1` coefficient is among the highest, indicating substantial and persistent growth year-over-year.
+  - **Feeling Temperature (`atemp`):** Higher perceived temperature is strongly associated with increased bike rentals.
 
-Top Positive Predictors: The most significant positive factors driving demand are Year (yr) and Feeling Temperature (atemp). The yr=1 coefficient is one of the highest, indicating a substantial, permanent growth in bike-sharing popularity from 2018 to 2019.
+- **Negative Impact of Season/Weather:**  
+  - **Spring (`season_spring`):** Demand drops significantly during the spring season.
+  - **Light Rain/Snow (`weathersit_LightRain_Snow`):** Severe weather conditions negatively affect rental counts.
 
-Negative Impact of Season/Weather: The demand is significantly lower during the Spring season (season_spring) and under the worst modeled weather condition, Light Rain/Snow (weathersit_LightRain_Snow).
+- **Strategic Insight:**  
+  BoomBikes should prioritize maintenance and operational capacity during peak seasons (Summer and Fall), and capitalize on the sustained year-over-year growth identified by the `yr` variable.
 
-Strategic Insight: The company should prioritize maintenance and operational capacity during peak periods (Summer and Fall) and capitalize on the sustained year-over-year growth identified by the yr variable.
+---
 
-**Technologies Used**
+## Technologies Used
 
-Python
-Pandas: For data manipulation and cleaning.
-NumPy: For numerical operations.
-Matplotlib & Seaborn: For exploratory data analysis and residual analysis visualization.
-Scikit-learn (sklearn): For data splitting (train_test_split) and scaling (MinMaxScaler).
-Statsmodels: For Ordinary Least Squares (OLS) model training, statistical summary, and VIF calculation.
+- **Python**
+- **Pandas:** Data manipulation and cleaning.
+- **NumPy:** Numerical operations.
+- **Matplotlib & Seaborn:** Visualizations for exploratory data analysis and residual analysis.
+- **Scikit-learn:** Data splitting (`train_test_split`), scaling (`MinMaxScaler`).
+- **Statsmodels:** Training the Ordinary Least Squares (OLS) model, statistical summaries, VIF calculation.
 
-**Contact**
-Created by [@abhisekag] - feel free to contact me!
+---
+
+## Contact
+
+Created by [@abhisekag] – feel free to contact me!
