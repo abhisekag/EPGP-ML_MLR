@@ -18,7 +18,7 @@ Surprise Housing, a US-based housing company, is planning to expand into the Aus
 The company needs a model to predict the actual value of prospective properties based on various features (like size, location, amenities, etc.). This will help them identify undervalued properties and make informed investment decisions.
 
 ### Dataset
-The project uses a dataset of house sales in Australia, containing 1460 entries with 81 explanatory variables describing (almost) every aspect of residential homes.
+The project uses a dataset of house sales in Australia, containing 1460 entries with 81 explanatory variables describing every aspect of residential homes.
 
 ## Conclusions
 
@@ -45,4 +45,5 @@ The optimal regularization strength (Alpha) was found to be 500 for Ridge and 10
 - Seaborn - version 0.11.x (for advanced visualization)
 - Scikit-learn - version 0.24.x (for machine learning modeling)
 
-## Acknowledgements
+## Contact
+Created by [@abhisekag] - feel free to contact me!
