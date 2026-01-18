@@ -5,9 +5,8 @@ A regression analysis project to predict the actual value of prospective propert
 ## Table of Contents
 
 - [General Information](#general-information)
-- [Technologies Used](#technologies-used)
 - [Conclusions](#conclusions)
-- [Acknowledgements](#acknowledgements)
+- [Technologies Used](#technologies-used)
 
 ## General Information
 
