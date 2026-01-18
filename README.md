@@ -1,64 +1,49 @@
-# BoomBikes Demand Prediction: Multiple Linear Regression
+# Housing Price Prediction Assignment
 
-This project aims to build a robust Multiple Linear Regression (MLR) model to identify the key factors driving bike rental demand for the bike-sharing company, BoomBikes. The goal is to accurately predict future demand and provide strategic insights for business planning.
-
----
+A regression analysis project to predict the actual value of prospective properties for Surprise Housing's entry into the Australian market.
 
 ## Table of Contents
 
-1. [General Information](#general-information)
-2. [Conclusions](#conclusions)
-3. [Technologies Used](#technologies-used)
-4. [Contact](#contact)
+- [General Information](#general-information)
+- [Conclusions](#conclusions)
+- [Technologies Used](#technologies-used)
 
----
 
 ## General Information
 
-**Project Background:**  
-BoomBikes, a US-based bike-sharing company, seeks a clear understanding of market dynamics to plan business operations, manage inventory, and develop effective marketing strategies.
+### Background
+Surprise Housing, a US-based housing company, is planning to expand into the Australian real estate market. They operate by purchasing houses below their actual value and flipping them for a profit.
 
-**Business Problem:**  
-Model the relationship between bike demand (total rental count: `cnt`) and various independent variables such as weather, season, and holidays. This will help management predict demand and identify actionable factors for growth.
+### Business Problem
+The company needs a model to predict the actual value of prospective properties based on various features (like size, location, amenities, etc.). This will help them identify undervalued properties and make informed investment decisions.
 
-**Dataset Used:**  
-- **File:** `day.csv`
-- **Contains:** Daily bike rental counts along with environmental and calendar variables.
-- **Time Period:** Two years (2018-2019)
-
----
+### Dataset
+The project uses a dataset of house sales in Australia, containing 1460 entries with 81 explanatory variables describing every aspect of residential homes.
 
 ## Conclusions
 
-The final MLR model was developed using an iterative feature selection process based on p-values and Variance Inflation Factor (VIF) analysis, resulting in a strong and interpretable model:
+### Model Performance
+Regularized regression models proved effective. Lasso Regression was chosen as the final model because it offered a high predictive accuracy ($R^2 \approx 0.86$) while simultaneously performing feature selection, making the model easier to interpret for business stakeholders.
 
-- **High Predictive Power:**  
-  The final model achieved an **R² score of approximately 0.82** on the test data, meaning the selected features explain about 82% of the variance in bike rental demand.
+### Key Predictors
+The most significant variables driving house prices were identified as:
 
-- **Top Positive Predictors:**  
-  - **Year (`yr`):** The `yr=1` coefficient is among the highest, indicating substantial and persistent growth year-over-year.
-  - **Feeling Temperature (`atemp`):** Higher perceived temperature is strongly associated with increased bike rentals.
+- Above Grade Living Area (GrLivArea): Larger living areas command higher prices.
+- Overall Quality (OverallQual): The material and finish of the house are critical.
+- Neighborhood: Specific locations like NoRidge and NridgHt are associated with significantly higher property values.
+- Garage Capacity: The size and car capacity of the garage (GarageCars, GarageArea) are strong positive indicators.
 
-- **Negative Impact of Season/Weather:**  
-  - **Spring (`season_spring`):** Demand drops significantly during the spring season.
-  - **Light Rain/Snow (`weathersit_LightRain_Snow`):** Severe weather conditions negatively affect rental counts.
-
-- **Strategic Insight:**  
-  BoomBikes should prioritize maintenance and operational capacity during peak seasons (Summer and Fall), and capitalize on the sustained year-over-year growth identified by the `yr` variable.
-
----
+### Regularization
+The optimal regularization strength (Alpha) was found to be 500 for Ridge and 1000 for Lasso, indicating a need to penalize complexity to prevent overfitting.
 
 ## Technologies Used
 
-- **Python**
-- **Pandas:** Data manipulation and cleaning.
-- **NumPy:** Numerical operations.
-- **Matplotlib & Seaborn:** Visualizations for exploratory data analysis and residual analysis.
-- **Scikit-learn:** Data splitting (`train_test_split`), scaling (`MinMaxScaler`).
-- **Statsmodels:** Training the Ordinary Least Squares (OLS) model, statistical summaries, VIF calculation.
-
----
+- Python - version 3.x
+- Pandas - version 1.3.x (for data manipulation)
+- NumPy - version 1.21.x (for numerical operations)
+- Matplotlib - version 3.4.x (for visualization)
+- Seaborn - version 0.11.x (for advanced visualization)
+- Scikit-learn - version 0.24.x (for machine learning modeling)
 
 ## Contact
-
-Created by [@abhisekag] – feel free to contact me!
+Created by [@abhisekag] - feel free to contact me!
